@@ -46,6 +46,7 @@ Channel = TypedDict('Channel', {'id': int, 'stream_id': str, 'tvguide_id': str,
 # vlc http://127.0.0.1:6363
 # mpv http://127.0.0.1:6363/ustvgo.m3u8
 
+PORT = os.environ['PORT']
 
 VERSION = '0.1.11'
 USER_AGENT = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
@@ -502,7 +503,7 @@ def args_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         '-p', '--port', metavar='PORT',
-        type=int_range(min_value=1, max_value=65535), default=6363,
+        type=int_range(min_value=1, max_value=65535), default=PORT,
         help='Serving port (default: %(default)s)'
     )
     parser.add_argument(
