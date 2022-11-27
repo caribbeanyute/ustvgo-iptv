@@ -10,6 +10,7 @@ import pathlib
 import re
 import sys
 import time
+import os
 from typing import Any, Awaitable, Callable, List, Optional
 from urllib.parse import quote_plus
 
@@ -47,6 +48,7 @@ Channel = TypedDict('Channel', {'id': int, 'stream_id': str, 'tvguide_id': str,
 # mpv http://127.0.0.1:6363/ustvgo.m3u8
 
 PORT = os.environ['PORT']
+print(PORT)
 
 VERSION = '0.1.11'
 USER_AGENT = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
